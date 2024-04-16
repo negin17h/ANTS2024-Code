@@ -14,7 +14,7 @@ from cls_SwarmIntelligence import PSO_BareBonesFullyInformed
 from cls_SwarmIntelligence import GOA
 import cls_ObjectiveFunctions as objectiveFunc
 
-# 17 Benchmark Functions
+# 18 Benchmark Functions
 benchmarkFuncList = [
     objectiveFunc.Ackley,
     objectiveFunc.Griewank,
