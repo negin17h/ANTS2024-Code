@@ -9,7 +9,7 @@ import seaborn as sns
 
 import cls_ObjectiveFunctions as objectiveFunc
 
-# 17 Benchmark Functions
+# 18 Benchmark Functions
 benchmarkFuncDic = {
     objectiveFunc.Ackley : "F10",
     objectiveFunc.Griewank : "F13",
