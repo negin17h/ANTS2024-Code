@@ -1,0 +1,98 @@
+---
+title: "ANTS2024"
+author: "Negin Harandi"
+date: "2024-06-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Load necessary library
+library(tidyverse)
+```
+
+## Loading Data
+
+```{r}
+df <- read.csv("Results_2024-03-27.csv", header = TRUE)
+```
+
+## Making a Pivot Table
+
+```{r}
+# Add a unique identifier for each observation within each ObjectiveFunction and Algorithm
+df <- df %>%
+  group_by(ObjectiveFunction, Algorithm) %>%
+  mutate(ObservationID = row_number())
+
+# Pivot the DataFrame to have algorithms as columns, keeping all observations
+pivoted_df <- df %>%
+  select(ObservationID, ObjectiveFunction, Algorithm, BestObjective) %>%
+  pivot_wider(names_from = Algorithm, values_from = BestObjective) %>%
+  select(-ObservationID)
+
+# Display the reshaped DataFrame
+print(head(pivoted_df))
+```
+## Wilcoxon Test
+
+```{r}
+# Define a function to perform Wilcoxon tests
+perform_wilcox_test <- function(data, algo1, algo2, alter) {
+  wilcox.test(data[[algo1]], data[[algo2]], alternative = alter)$p.value
+}
+```
+
+## One-Sided Test
+
+```{r}
+# List of algorithms to compare against GOA
+algorithms <- setdiff(colnames(pivoted_df), c("ObjectiveFunction", "GOA"))
+
+# Create an empty data frame to store the results
+results <- data.frame(ObjectiveFunction = character(), stringsAsFactors = FALSE)
+
+# Perform the Wilcoxon test for each function and each algorithm
+for (algo in algorithms) {
+  p_values <- pivoted_df %>%
+    group_by(ObjectiveFunction) %>%
+    summarize(!!paste0("p_value_", algo) := perform_wilcox_test(cur_data(), "GOA", algo, alter="less"))
+  
+  results <- full_join(results, p_values, by = "ObjectiveFunction")
+}
+
+# Display the results
+print(results)
+
+# Save the results to a CSV file
+ write.csv(results, 'Wilcoxon_Test_Results_OneSided.csv', row.names = FALSE)
+```
+
+## Two-Sided Test
+
+```{r}
+# List of algorithms to compare against GOA
+algorithms <- setdiff(colnames(pivoted_df), c("ObjectiveFunction", "GOA"))
+
+# Create an empty data frame to store the results
+results <- data.frame(ObjectiveFunction = character(), stringsAsFactors = FALSE)
+
+# Perform the Wilcoxon test for each function and each algorithm
+for (algo in algorithms) {
+  p_values <- pivoted_df %>%
+    group_by(ObjectiveFunction) %>%
+    summarize(!!paste0("p_value_", algo) := perform_wilcox_test(cur_data(), "GOA", algo, alter="two.sided"))
+  
+  results <- full_join(results, p_values, by = "ObjectiveFunction")
+}
+
+# Display the results
+print(results)
+
+# Save the results to a CSV file
+ write.csv(results, 'Wilcoxon_Test_Results_TwoSided.csv', row.names = FALSE)
+```
+
