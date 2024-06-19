@@ -19,3 +19,11 @@ The figures presented in the papar in two formats of PNG and EPS can be found in
 
 
 ## Appendix_BenchmarkFunctions.pdf
+
+## Requirements
+```
+python 3.8
+NumPy 1.24.2
+Pandas 1.5.3
+Matplotlib 3.7.5
+Seaborn 0.13.2
