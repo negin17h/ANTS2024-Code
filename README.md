@@ -2,27 +2,43 @@
 
 This repository contains the code and some materials used in the experimental work presented in the following paper:
 
-**Grasshopper Optimization Algorithm (GOA): A Novel Algorithm or A Variant of PSO?, ANTS2024, 2024**
+**Grasshopper Optimization Algorithm (GOA): A Novel Algorithm or A Variant of PSO? ANTS2024, 2024**
 
-## Data
+### Citation
+If you find the code in this repository useful for your research, consider citing our paper.
 
-In this folder, we provided the data collected from the experiment explained in Section 5.1 in the paper.
+### Data
 
-## Figures
+In this folder, we provided the data collected from the experiment explained in Section 5.1 of the paper.
 
-The figures presented in the papar in two formats of PNG and EPS can be found in this folder.
+### Figures
 
-## Source
+The figures presented in the paper in PNG and EPS formats can be found in this folder.
+
+### Source
+
+This folder contains the codebase for the ANTS 2024 project. The code is organized as follows:
+
+**cls_GeneralFunctions.py:**
+
+**cls_ObjectiveFunctions.py:**
+
+**cls_SwarmIntelligence.py:**
+
+**GOA_PSO_BenchmarkFunctions_ToFile.py:**
+
+**GOA_PSO_BenchmarkFunctions_BoxPlotAll.py:**
 
 
-## Statistic Test
+### Statistic Test
 
 
-## Appendix_BenchmarkFunctions.pdf
+### Appendix_BenchmarkFunctions.pdf
 
-## Requirements
+
+### Requirements
 ```
-python 3.8
+Python 3.8
 NumPy 1.24.2
 Pandas 1.5.3
 Matplotlib 3.7.5
