@@ -19,15 +19,15 @@ The figures presented in the paper in PNG and EPS formats can be found in this f
 
 This folder contains the codebase for the ANTS 2024 project. The code is organized as follows:
 
-**cls_GeneralFunctions.py:**
+**cls_GeneralFunctions.py:** This file contains general functions used by other classes/functions.
 
-**cls_ObjectiveFunctions.py:**
+**cls_ObjectiveFunctions.py:** This file contains the code for all the implemented benchmark functions. Any other functions can be added to this class to be used to run the algorithms.
 
-**cls_SwarmIntelligence.py:**
+**cls_SwarmIntelligence.py:** This file contains the code for all the implemented SI algorithms (GOA, PSO, and its variants).
 
-**GOA_PSO_BenchmarkFunctions_ToFile.py:**
+**GOA_PSO_BenchmarkFunctions_ToFile.py:** This file contains the code to run all the algorithms and save the results to be used later to plot (for the experimental setup, please refer to Section 5.1 and Table 1)
 
-**GOA_PSO_BenchmarkFunctions_BoxPlotAll.py:**
+**GOA_PSO_BenchmarkFunctions_BoxPlotAll.py:** This file contains the code to read the data (from the previous steps) and plot the required boxplots.
 
 
 ## Statistic Test
