@@ -34,7 +34,7 @@ This folder contains the codebase for the ANTS 2024 project. The code is organiz
 
 
 ## Appendix_BenchmarkFunctions.pdf
-
+The mathematical definitions of the benchmark functions used in the experimental phase.
 
 ## Requirements
 ```
