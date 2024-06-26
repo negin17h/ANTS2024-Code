@@ -31,7 +31,7 @@ This folder contains the codebase for the ANTS 2024 project. The code is organiz
 
 
 ## Statistic Test
-
+R Markdown containing the code for statistic tests (one-sided and two-sided tests) is available in this folder. This file will use the CSV file in the data folder.
 
 ## Appendix_BenchmarkFunctions.pdf
 The mathematical definitions of the benchmark functions used in the experimental phase.
