@@ -2,7 +2,7 @@
 
 This repository contains the code and some materials used in the experimental work presented in the following paper:
 
-**Grasshopper Optimization Algorithm (GOA): A Novel Algorithm or A Variant of PSO? ANTS2024, 2024**
+**Harandi, N., Van Messem, A., De Neve, W., Vankerschaver, J. (2024). Grasshopper Optimization Algorithm (GOA): A Novel Algorithm or A Variant of PSO?. In: Hamann, H., et al. Swarm Intelligence. ANTS 2024. Lecture Notes in Computer Science, vol 14987. Springer, Cham. https://doi.org/10.1007/978-3-031-70932-6_7**
 
 ## Citation
 If you find the code in this repository useful for your research, consider citing our paper.
